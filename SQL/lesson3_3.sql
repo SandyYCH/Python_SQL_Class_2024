@@ -5,5 +5,7 @@ CREATE TABLE IF NOT EXISTS city(
 	PRIMARY KEY(id)
 );
 
+DROP TABLE city;
+
 SELECT *
 FROM city; 
