@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS city(
 DROP TABLE city;
 
 SELECT *
-FROM city; 
+FROM city
