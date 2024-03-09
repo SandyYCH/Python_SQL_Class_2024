@@ -1,14 +1,14 @@
 DROP TABLE IF EXISTS stations;
 
 CREATE TABLE IF NOT EXISTS stations(
- stationCode INT PRIMARY KEY,
- stationName VARCHAR(20) NOT NULL,
- stationEName VARCHAR(50),
- name VARCHAR(20),
- ename VARCHAR(50),
- stationAddrTw VARCHAR(255),
- stationAddrEn VARCHAR(255),
- stationTel VARCHAR(20),
+ 編號 INT PRIMARY KEY,
+ 名稱 VARCHAR(20) NOT NULL,
+ 英文名稱 VARCHAR(50),
+ 地名 VARCHAR(20),
+ 英文地名 VARCHAR(50),
+ 地址 VARCHAR(255),
+ 英文地址 VARCHAR(255),
+ 電話 VARCHAR(20),
  gps VARCHAR(50),
  youbike BOOL
 );
