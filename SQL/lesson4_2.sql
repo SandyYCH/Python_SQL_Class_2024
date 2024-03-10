@@ -15,4 +15,20 @@ CREATE TABLE student(
 );
 
 SELECT *
-FROM student
+FROM student;
+
+INSERT INTO student VALUES(1,'小白','英語');
+
+INSERT INTO student VALUES(2,'小白','歷史')
+RETURNING *;
+
+INSERT INTO student(name,major) VALUES('小黑','數學')
+RETURNING *;
+
+INSERT INTO student(name,major) VALUES('小黑','地理')
+RETURNING *;
+
+/*新增多筆資料*/
+INSERT INTO student(name,major)
+VALUES('小白','國文'),('小藍','英文')
+RETURNING *;
