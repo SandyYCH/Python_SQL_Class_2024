@@ -1,10 +1,10 @@
 DROP TABLE student;
 
 CREATE TABLE student(
-	Student_id SERIAL PRIMARY KEY,
-	Name VARCHAR(20),
-	Major VARCHAR(20),
-	Score INT
+	student_id SERIAL PRIMARY KEY,
+	name VARCHAR(20),
+	major VARCHAR(20),
+	score INT
 );
 
 INSERT INTO student VALUES(1, '小白','英語',50);
@@ -47,7 +47,7 @@ SELECT *
 FROM student
 WHERE major = '英語'
 ORDER BY score DESC
-LIMIT 1
+LIMIT 1;
 
 SELECT *
 FROM student
@@ -60,7 +60,6 @@ WHERE major = '英語' OR score > 60
 SELECT *
 FROM student
 WHERE major = '英語' OR major='生物' OR major='歷史'
-
 
 SELECT *
 FROM student
@@ -77,8 +76,7 @@ WHERE score BETWEEN 80 AND 100;
 SELECT *
 FROM student
 WHERE NOT name='小黃'
-
-
+	
 SELECT *
 FROM student
 WHERE name LIKE '小%'
