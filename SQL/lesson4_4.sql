@@ -14,7 +14,8 @@ INSERT INTO student VALUES(3, '小綠','歷史',70);
 INSERT INTO student VALUES(4, '小藍','英語',80);
 INSERT INTO student VALUES(5, '小黑','化學',20);
 
-SELECT * FROM student;
+SELECT * 
+FROM student;
 
 UPDATE student
 SET major='生物'
