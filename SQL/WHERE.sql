@@ -18,6 +18,11 @@ WHERE last_name='Rodriquez' OR first_name='Adam';
 /*取出first_name是Ann,Anne,Annie*/
 SELECT *
 FROM customer
+WHERE first_name ='Ann' OR first_name ='Anne' OR first_name ='Annie'
+
+/*或*/
+SELECT *
+FROM customer
 WHERE first_name IN('Ann','Anne','Annie');
 
 /*取出字串開頭是Ann的first_name*/
@@ -32,3 +37,7 @@ WHERE first_name LIKE 'A%'
 AND LENGTH(first_name) BETWEEN 3 AND 5
 
 /*取出first_name,前3字為Bra,但last_name不是Motley*/
+SELECT *
+FROM customer
+WHERE first_name LIKE 'Bra%'
+AND last_name NOT LIKE 'Motley%'
