@@ -9,14 +9,21 @@ FROM payment
 GROUP BY customer_id
 ORDER BY 總和 DESC;
 
-/*連結payment和customer table，並總和各客戶的應收帳款*/
+/*連結payment和customer table，並總和各客戶的應收帳款-方法1*/
+/*1.*/
+SELECT first_name, SUM(amount) AS 總和
+FROM payment LEFT JOIN customer ON payment.customer_id=customer.customer_id
+GROUP BY first_name
+ORDER BY 總和 DESC;
+
+/*2.兩個字串連結在一起*/
 SELECT first_name || ' ' || last_name AS full_name,
 SUM(amount) AS 總和
 FROM payment LEFT JOIN customer ON payment.customer_id=customer.customer_id
 GROUP BY full_name
 ORDER BY 總和 DESC;
 
-/*連結payment和customer table，並總和各客戶的應收帳款 另外一種寫法*/
+/*連結payment和customer table，並總和各客戶的應收帳款-方法2*/
 SELECT first_name || ' ' || last_name AS full_name,
 SUM(amount) AS 總和
 FROM payment LEFT JOIN customer USING (customer_id)
