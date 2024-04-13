@@ -31,3 +31,9 @@ INSERT INTO 聯絡人(客戶id,聯絡人姓名,電話,郵件)
 VALUES (1,'John Doe','(408)-111-1234','john.doe@bluebird.dev'),
 	   (1,'Jane Doe','(408)-111-1235','jane.doe@bluebird.dev'),
 	   (2,'David Wright','(408)-222-1234','david.wright@dolphin.dev');
+
+SELECT COUNT(*)
+FROM 客戶;
+
+SELECT COUNT(*)
+FROM 聯絡人;
