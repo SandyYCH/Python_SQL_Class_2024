@@ -8,5 +8,8 @@ CREATE TABLE IF NOT EXISTS student(
 	math SMALLINT	
 );
 
+INSERT INTO student(name, chinese, english, math)
+VALUES('徐國堂', 60, 72, 85);
+
 SELECT *
 FROM student;
