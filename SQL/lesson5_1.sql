@@ -37,3 +37,6 @@ FROM 客戶;
 
 SELECT COUNT(*)
 FROM 聯絡人;
+
+DELETE FROM 客戶
+WHERE 客戶_id = 1
