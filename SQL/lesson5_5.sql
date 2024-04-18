@@ -31,9 +31,9 @@ SELECT * from 聯絡人;
 
 /*2個資料表變成1個資料表*/
 SELECT 聯絡人id,客戶名稱,聯絡人姓名,電話,郵件
-FROM 聯絡人 LEFT JOIN 客戶 ON 聯絡人.客戶id = 客戶.客戶_id
+FROM 聯絡人 LEFT JOIN 客戶 ON 聯絡人.客戶id = 客戶.客戶_id;
 
 /*2個資料表變成1個資料表，且抓取客戶名稱是遠傳電信的資料*/
 SELECT 聯絡人id,客戶名稱,聯絡人姓名,電話,郵件
 FROM 聯絡人 LEFT JOIN 客戶 ON 聯絡人.客戶id = 客戶.客戶_id
-WHERE 客戶名稱 = '遠傳電信'
+WHERE 客戶名稱 = '遠傳電信';
