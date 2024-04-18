@@ -1,8 +1,7 @@
 from dotenv import load_dotenv
-load_dotenv()
 import psycopg2
 import os
-
+load_dotenv()
 
 with psycopg2.connect(os.environ['POSTGRE_PASSWORD']) as conn:
     with conn.cursor() as cursor:
@@ -16,3 +15,7 @@ with psycopg2.connect(os.environ['POSTGRE_PASSWORD']) as conn:
 
 for item in datas:
     print(item)
+
+
+
+    
