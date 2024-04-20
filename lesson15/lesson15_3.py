@@ -1,6 +1,6 @@
 import streamlit as st
 
-#建立初始化/預設的session_state的key 
+#建立預設/初始化的session_state的key 
 if 'a1' not in st.session_state:
     st.session_state['a1'] = 100
 
