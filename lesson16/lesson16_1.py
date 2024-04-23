@@ -3,9 +3,9 @@ import streamlit as st
 st.title("Session_state 基礎")
 #st.write(st.session_state)
 
-#使用Input widgets
-number:int = st.slider("數值",min_value=1,max_value=10,value=5,key="mySlider")
-#st.write("加入slider後的session_stats",st.session_state)
+#使用Input widgets - st.slider
+number:int = st.slider("數值", min_value=1, max_value=10, value=5, key="mySlider")  #儲存在session_state裡的key名稱=mySlider
+#st.write("加入slider後的session_state",st.session_state)
 
 col1, buff, col2 = st.columns([1, 0.5, 3])
 
