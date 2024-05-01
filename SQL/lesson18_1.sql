@@ -17,13 +17,12 @@ CREATE TABLE IF NOT EXISTS youbike(
 	活動 BOOLEAN,
 	PRIMARY KEY(日期,編號),
 	FOREIGN KEY (編號) REFERENCES 站點資訊(站點編號)
-	/*CASCADE：當有刪除/更新，youbike資料表也跟著刪除/更新*/
 	ON DELETE CASCADE
 	ON UPDATE CASCADE
 );
 
-DROP TABLE youbike;
 DROP TABLE 站點資訊;
+DROP TABLE youbike;
 
 INSERT INTO 站點資訊
 VALUES ('500101001','YouBike2.0_捷運科技大樓站','大安區','復興南路二段235號前',25.02605,121.5436)
