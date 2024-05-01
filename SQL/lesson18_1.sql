@@ -17,13 +17,14 @@ CREATE TABLE IF NOT EXISTS youbike(
 	活動 BOOLEAN,
 	PRIMARY KEY(日期,編號),
 	FOREIGN KEY (編號) REFERENCES 站點資訊(站點編號)
-	ON DELETE CASCADE
-	ON UPDATE CASCADE
+	ON DELETE CASCADE   /*若站點資訊表資料刪除，youbike表也一併刪除*/
+	ON UPDATE CASCADE   /*若站點資訊表資料更改，youbike表也一併更改*/
 );
 
-DROP TABLE 站點資訊;
 DROP TABLE youbike;
+DROP TABLE 站點資訊;
 
+/*插入全部欄位"()"可省略*，但需要依照欄位順序插入資訊；若指定欄位則需要"()"*/
 INSERT INTO 站點資訊
 VALUES ('500101001','YouBike2.0_捷運科技大樓站','大安區','復興南路二段235號前',25.02605,121.5436)
 ON CONFLICT DO NOTHING;
@@ -31,6 +32,12 @@ ON CONFLICT DO NOTHING;
 INSERT INTO youbike
 VALUES ('2024-02-16 10:48:19','500101001',28,1,27,true)
 ON CONFLICT DO NOTHING;
+
+SELECT *
+FROM 站點資訊;
+
+SELECT *
+FROM youbike;
 
 SELECT count(*) AS 筆數
 FROM youbike
