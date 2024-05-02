@@ -9,7 +9,7 @@ def get_sarea()->tuple:
     conn = psycopg2.connect(os.environ['POSTGRE_PASSWORD2'])
     with conn:
         with conn.cursor() as cursor:
-            #取出最新日期各站點資料
+            #取出行政區
             sql = '''
                 SELECT 行政區
                 FROM 站點資訊
@@ -34,10 +34,10 @@ def info_sarea(name:str):
             WHERE (日期,編號) IN (
 	            SELECT MAX(日期),編號
 	            FROM youbike
-	            GROUP BY 編號
-            ) AND 行政區 = %s;
+	            GROUP BY 編號) 
+                AND 行政區 = %s;
             '''
-            cursor.execute(sql,(name,)) 
+            cursor.execute(sql,(name,))   #tuple裡只有一個要加上逗號
             return cursor.fetchall()
     conn.close()
 
@@ -48,9 +48,13 @@ data = [tuple1[0] for tuple1 in get_sarea()]
 st.radio('選擇行政區:',data,key='sarea',horizontal=True)
 
 area = st.session_state.sarea
-data = info_sarea(name=area)
+data = info_sarea(name=area)   #呼叫info_sarea函式
+#print(data)
 
-
+#將tuple更改為dict
 data1 = [{'日期':item[0],'站點':item[1],'總車輛':item[6],'可借':item[7],'可還':item[8],'活動':item[9]} for item in data]
 #print(data1)
-st.dataframe(data1)
+st.dataframe(data1)  #將資料製作成表格
+
+
+
